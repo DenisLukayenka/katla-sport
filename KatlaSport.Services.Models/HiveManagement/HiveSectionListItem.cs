@@ -24,5 +24,10 @@
         /// Gets or sets a value indicating whether a hive is deleted.
         /// </summary>
         public bool IsDeleted { get; set; }
+
+        /// <summary>
+        /// Gets or sets product hive identifier.
+        /// </summary>
+        public int StoreHiveId { get; set; }
     }
 }
