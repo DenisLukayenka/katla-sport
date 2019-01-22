@@ -24,7 +24,11 @@ export class HiveSectionListComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(p => {
       this.hiveId = p['id'];
-      this.hiveService.getHiveSections(this.hiveId).subscribe(s => this.hiveSections = s);
+      if(this.hiveId == undefined){
+        this.hiveSectionService.getHiveSections().subscribe(s => this.hiveSections = s);
+      } else {
+        this.hiveService.getHiveSections(this.hiveId).subscribe(s => this.hiveSections = s);
+      }
     })
   }
 
